@@ -15,3 +15,9 @@ git_subbranch_init () {
   git push -u origin gh-pages
   cd ..
 }
+
+# Display branches
+help_branch_display () {
+  git branch -vv
+  git log --graph --oneline --all
+}

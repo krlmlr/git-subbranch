@@ -24,9 +24,7 @@ git_subbranch_ignore
 
 git_subbranch_init
 
-# Display branches
-git branch -vv
-git log --graph --oneline --all
+help_branch_display
 
 # Deploy something to gh-pages
 tac README.md > gh-pages-dir/README.dm
