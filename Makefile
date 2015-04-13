@@ -9,3 +9,6 @@ init-git:
 
 git_subbranch_ignore git_subbranch_init git_subbranch_commit git_subbranch_push:
 	sh -c ". ./functions; $@"
+
+deploy:
+	cp README.md gh-pages-dir/index.md
