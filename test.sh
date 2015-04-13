@@ -3,7 +3,7 @@
 set -e
 set -x
 
-. functions
+. ./functions
 
 rm -rf test
 mkdir test
