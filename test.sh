@@ -42,7 +42,7 @@ tac README.md > gh-pages-dir/README.dm
 # Update gh-pages
 cd gh-pages-dir
 git fetch
-git merge -s ours origin/master
+git merge -s ours origin/master --no-edit
 git add README.dm
 git commit --amend -m "deploy"
 git push -u -f origin gh-pages
