@@ -7,6 +7,8 @@ rm -rf test
 mkdir test
 cd test
 
+. functions
+
 # Init repo
 git init .
 git commit --allow-empty -m "initial"
@@ -18,19 +20,9 @@ echo "Some text" >> README.md
 git add README.md
 git commit -m "add README"
 
-# Ignore gh-pages-dir subdirectory
-echo /gh-pages-dir >> .gitignore
-git add .gitignore
-git commit -m "ignore gh-pages-dir"
+git_subbranch_ignore
 
-# Initialize fresh gh-pages branch
-git clone . gh-pages-dir
-cd gh-pages-dir
-git checkout --orphan gh-pages
-git commit --allow-empty -m "initial (pages)"
-git branch -d master
-git push -u origin gh-pages
-cd ..
+git_subbranch_init
 
 # Display branches
 git branch -vv
