@@ -51,3 +51,32 @@ cd ..
 # Display branches again
 git branch -vv
 git log --graph --oneline --all
+
+# Edit
+echo "More stuff" >> README.md
+git add README.md
+git commit -m "More stuff"
+
+echo "Even more stuff" >> README.md
+git add README.md
+git commit -m "Even more stuff"
+
+# Deploy to gh-pages again
+tac README.md > gh-pages-dir/README.dm
+
+# Update gh-pages
+cd gh-pages-dir
+git fetch
+git merge -s ours origin/master --no-edit
+git add README.dm
+git commit --amend -m "deploy"
+git push -u -f origin gh-pages
+cd ..
+
+# Display branches
+git branch -vv
+git log --graph --oneline --all
+
+# Display contents
+cat README.md
+cat gh-pages-dir/README.dm
