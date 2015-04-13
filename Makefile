@@ -18,4 +18,7 @@ create_artifact:
 
 prepare_deploy: create_artifact git_subbranch_commit git_subbranch_push
 
+push_deploy: prepare_deploy
+	git push
+
 .FORCE:
