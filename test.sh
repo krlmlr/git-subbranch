@@ -58,6 +58,16 @@ git_subbranch_push
 # Still everything nice and in order
 help_branch_display
 
+# List files
+ls
+ls gh-pages-dir
+
+# No README.md file in gh-pages
+! ls gh-pages-dir/README.md
+
 # Display contents
 cat README.md
 cat gh-pages-dir/README.dm
+
+# README.dm is the reverse of README.md
+tac README.md | diff - gh-pages-dir/README.dm
