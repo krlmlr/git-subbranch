@@ -13,8 +13,8 @@ git commit --allow-empty -m "initial"
 
 # Add contents
 echo "# README" > README.md
-echo > README.md
-echo "Some text" > README.md
+echo >> README.md
+echo "Some text" >> README.md
 git add README.md
 git commit -m "add README"
 
