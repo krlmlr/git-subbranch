@@ -21,7 +21,7 @@ git_subbranch_commit () {
   cd gh-pages-dir
   git fetch
   git merge -s ours origin/master --no-edit
-  git add README.dm
+  git add .
   git commit -m "deploy"
   cd ..
 }
