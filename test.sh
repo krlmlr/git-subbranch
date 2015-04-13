@@ -38,9 +38,7 @@ git commit --amend -m "deploy"
 git push -u -f origin gh-pages
 cd ..
 
-# Display branches again
-git branch -vv
-git log --graph --oneline --all
+help_branch_display
 
 # Edit
 echo "More stuff" >> README.md
@@ -63,9 +61,7 @@ git commit --amend -m "deploy"
 git push -u -f origin gh-pages
 cd ..
 
-# Display branches
-git branch -vv
-git log --graph --oneline --all
+help_branch_display
 
 # Display contents
 cat README.md
