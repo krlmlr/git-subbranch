@@ -1,6 +1,6 @@
 all: test
 
-test:
+test: .FORCE
 	./test.sh
 
 init-git:
@@ -14,3 +14,5 @@ create_artifact:
 	cp README.md gh-pages-dir/index.md
 
 prepare_deploy: create_artifact git_subbranch_commit git_subbranch_push
+
+.FORCE:
