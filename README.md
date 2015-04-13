@@ -28,20 +28,22 @@ Perhaps this can be done better.
 Clone the repo and run `make`, a subdirectory `test` is created.  Or head over to the latest test result on [Travis CI](https://travis-ci.org/krlmlr/git-subbranch).
 
 
-## Compared to switching between branches
+## Comparison
+
+### To switching between branches
 
 - Seamless operation
 - No need to maintain a "clean" state of the repository just to look at the `gh-pages` branch
 - Clear connection between regular and `gh-pages` branch via history (optional)
 
 
-## Compared to parallel structures
+### To parallel structures
 
 - Self-contained
 - Clear connection between regular and `gh-pages` branch via history (optional)
 
 
-## Compared to redundant storage
+### To redundant storage
 
 - Separation of concern
 - No waste of space
