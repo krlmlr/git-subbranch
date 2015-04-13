@@ -3,11 +3,11 @@
 set -e
 set -x
 
+. functions
+
 rm -rf test
 mkdir test
 cd test
-
-. functions
 
 # Init repo
 git init .
