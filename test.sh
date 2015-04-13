@@ -26,7 +26,7 @@ git commit -m "ignore gh-pages-dir"
 # Initialize fresh gh-pages branch
 git clone . gh-pages-dir
 cd gh-pages-dir
-git branch --orphan gh-pages
+git checkout --orphan gh-pages
 git commit --allow-empty -m "initial (pages)"
 git branch -d master
 git push -u origin gh-pages
