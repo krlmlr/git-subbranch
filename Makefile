@@ -18,8 +18,6 @@ git_subbranch_%:
 create_artifact:
 	( echo "---"; echo "layout: index"; echo "---"; echo; grep -B 1000 -A 1 "## Demonstration" README.md; echo '```'; make test_in_tmp; echo '```'; grep -A 1000 -B 2 "## Documentation" README.md ) > gh-pages-dir/index.md
 	echo "markdown: redcarpet" > gh-pages-dir/_config.yml
-	mkdir -p gh-pages-dir/_layouts
-	cp index.html gh-pages-dir/_layouts
 
 prepare_deploy: git_subbranch_link create_artifact git_subbranch_commit git_subbranch_push
 
