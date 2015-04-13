@@ -10,5 +10,6 @@ init-git:
 git_subbranch_ignore git_subbranch_init git_subbranch_commit git_subbranch_push:
 	sh -c ". ./functions; $@"
 
-deploy:
+add_artifact:
 	cp README.md gh-pages-dir/index.md
+	cd gh-pages-dir && git add index.md && git commit -m "add artifact"
