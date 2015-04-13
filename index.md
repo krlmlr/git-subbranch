@@ -8,13 +8,13 @@ This may be of interest for you if you host project pages in a GitHub Pages bran
 
 ## The problem
 
-The `gh-pages` branch in GitHub is special -- its contents are interpreted as a Jekyll or HTML website and provided on http://username.github.io/projectname.  The code, on the other hand, is supposed to be located in another branch, e.g., `master`, with possible further feature/hotfix/... branches.  If the contents of the `gh-pages` branch depend on the contents of the "main" branches, there are several obvious options for organizing this:
+The `gh-pages` branch in GitHub is special -- its contents are interpreted as a Jekyll or HTML website and provided on http://username.github.io/projectname.  The source files, on the other hand, are supposed to be located in another branch, e.g., `master`, with possible further feature/hotfix/... branches.  If the contents of the `gh-pages` branch depend on the contents of the "main" branches, there are several obvious options for organizing this:
 
 1. Switching between branches: One checkout, current branch is chosen via `git checkout`.
 2. Side by side: Two checkouts, but with different checked-out branches. (@chrisjacob [discusses](https://gist.github.com/chrisjacob/833223) a setup using a "grand-parent" directory.)
 3. Contents of the `gh-pages` branch are contained redundantly in a subdirectory. (Uses `git subtree`, described [here](https://gist.github.com/cobyism/4730490), [here](http://gsferreira.com/archive/2014/06/update-github-pages-using-a-project-subfolder/), [here](http://lukecod.es/2014/08/15/deploy-a-static-subdirectory-to-github-pages/), [here](http://happygiraffe.net/blog/2009/07/04/publishing-a-subdirectory-to-github-pages/), and [my favorite approach until now](https://github.com/johnmyleswhite/ProjectTemplate/blob/9374ccc80066f48c925a8e67f159b6602da7c3e8/Makefile#L9)).
 
-Perhaps this can be done better.
+None of them are really satisfactory. Perhaps this can be done better.
 
 
 ## Proposition
@@ -37,69 +37,69 @@ cd /tmp/git-subbranch && make test
 make[2]: Entering directory '/tmp/git-subbranch'
 ./test.sh
 Initialized empty Git repository in /tmp/git-subbranch/test/.git/
-[master (root-commit) 34332aa] initial
-[master 6fa3e83] initial README.md
+[master (root-commit) a1859a5] initial
+[master 38eeaf7] initial README.md
  1 file changed, 1 insertion(+)
  create mode 100644 README.md
-[master 21c17fb] ignore gh-pages-dir
+[master eaae557] ignore gh-pages-dir
  1 file changed, 1 insertion(+)
  create mode 100644 .gitignore
-[gh-pages (root-commit) ce6ace1] initial (pages)
-Deleted branch master (was 21c17fb).
+[gh-pages (root-commit) 83e0eb6] initial (pages)
+Deleted branch master (was eaae557).
 Branch gh-pages set up to track remote branch gh-pages from origin.
-  gh-pages ce6ace1 initial (pages)
-* master   21c17fb ignore gh-pages-dir
-* ce6ace1 initial (pages)
-* 21c17fb ignore gh-pages-dir
-* 6fa3e83 initial README.md
-* 34332aa initial
+  gh-pages 83e0eb6 initial (pages)
+* master   eaae557 ignore gh-pages-dir
+* 83e0eb6 initial (pages)
+* eaae557 ignore gh-pages-dir
+* 38eeaf7 initial README.md
+* a1859a5 initial
 Merge made by the 'ours' strategy.
-[gh-pages 2dec730] deploy
+[gh-pages ed61230] deploy
  1 file changed, 1 insertion(+)
  create mode 100644 README.dm
 Branch gh-pages set up to track remote branch gh-pages from origin.
-  gh-pages 2dec730 deploy
-* master   21c17fb ignore gh-pages-dir
-* 2dec730 deploy
-*   a488b7e Merge remote-tracking branch 'origin/master' into gh-pages
+  gh-pages ed61230 deploy
+* master   eaae557 ignore gh-pages-dir
+* ed61230 deploy
+*   e8e6897 Merge remote-tracking branch 'origin/master' into gh-pages
 |\  
-| * 21c17fb ignore gh-pages-dir
-| * 6fa3e83 initial README.md
-| * 34332aa initial
-* ce6ace1 initial (pages)
-[master 2a3135f] More stuff
+| * eaae557 ignore gh-pages-dir
+| * 38eeaf7 initial README.md
+| * a1859a5 initial
+* 83e0eb6 initial (pages)
+[master 09d3304] More stuff
  1 file changed, 1 insertion(+)
-[master 7b9f5a2] Even more stuff
+[master cf3218f] Even more stuff
  1 file changed, 1 insertion(+)
 Merge made by the 'ours' strategy.
-[gh-pages bbe348a] deploy
+[gh-pages ed971b4] deploy
  1 file changed, 2 insertions(+)
-[master 04dff07] Oops, forgot
+[master acad471] Oops, forgot
  1 file changed, 1 insertion(+)
 Merge made by the 'ours' strategy.
-[gh-pages 5ca35af] deploy
+[gh-pages 68ae837] deploy
  1 file changed, 1 insertion(+)
 Branch gh-pages set up to track remote branch gh-pages from origin.
-  gh-pages 5ca35af deploy
-* master   04dff07 Oops, forgot
-* 5ca35af deploy
-*   4e8c963 Merge remote-tracking branch 'origin/master' into gh-pages
+  gh-pages 68ae837 deploy
+* master   acad471 Oops, forgot
+* 68ae837 deploy
+*   4d01188 Merge remote-tracking branch 'origin/master' into gh-pages
 |\  
-| * 04dff07 Oops, forgot
-* | bbe348a deploy
-* |   b1bc593 Merge remote-tracking branch 'origin/master' into gh-pages
+| * acad471 Oops, forgot
+* | ed971b4 deploy
+* |   1ce80b0 Merge remote-tracking branch 'origin/master' into gh-pages
 |\ \  
 | |/  
-| * 7b9f5a2 Even more stuff
-| * 2a3135f More stuff
-* | 2dec730 deploy
-* |   a488b7e Merge remote-tracking branch 'origin/master' into gh-pages
+| * cf3218f Even more stuff
+| * 09d3304 More stuff
+* | ed61230 deploy
+* |   e8e6897 Merge remote-tracking branch 'origin/master' into gh-pages
 |\ \  
 | |/  
-| * 21c17fb ignore gh-pages-dir
-| * 6fa3e83 initial README.md
-| * 34332aa initial
-* ce6ace1 initial (pages)
+| * eaae557 ignore gh-pages-dir
+| * 38eeaf7 initial README.md
+| * a1859a5 initial
+* 83e0eb6 initial (pages)
 gh-pages-dir
 README.md
 README.dm
@@ -114,6 +114,19 @@ initial README.md
 make[2]: Leaving directory '/tmp/git-subbranch'
 make[1]: Leaving directory '/home/muelleki/git/git-subbranch'
 ```
+
+
+## Documentation
+
+The file [`functions`](https://github.com/krlmlr/git-subbranch/blob/master/functions) defines a few verbs, the interesting ones have a with `git_subbranch_` prefix:
+
+- `ignore`: Is supposed to run only once, adds the `gh-pages-dir` to `.gitignore`.
+- `init`: Initializes a `gh-pages` branch, sets up the repository for this branch in `gh-pages-dir` and links this repository to the main checkout.
+- `link`: Links the current state of the `master` branch with the `gh-pages` branch (a tricky `git merge`).
+- `commit`: Commits all files in `gh-pages-dir` (just a `git add -A`).
+- `push`: Updates the local `gh-pages` branch from the repository in `gh-pages-dir`.
+
+In day-to-day use, the usual sequence of commands will be `link` -> `commit` -> `push`, although they can be interchanged arbitrarily.  In particular, if you never `link`, the two branches remain completely separate.
 
 
 ## Comparison
@@ -135,3 +148,8 @@ make[1]: Leaving directory '/home/muelleki/git/git-subbranch'
 
 - Separation of concern
 - No waste of space
+
+
+## Summary
+
+The setup described here seems to work for me, although this site (and the commands presented here) is in a very early stage.  I hope others find this useful too, and this sketch evolves into a more mature tool.
