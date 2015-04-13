@@ -14,40 +14,28 @@ git init .
 git commit --allow-empty -m "initial"
 
 # Add contents
-echo "# README" > README.md
-echo >> README.md
-echo "Some text" >> README.md
-git add README.md
-git commit -m "add README"
+help_edit_source "initial README.md"
 
+# Create infrastructure (execute once)
 git_subbranch_ignore
-
 git_subbranch_init
 
+# Show results -- unrelated branches
 help_branch_display
 
-# Deploy something to gh-pages
-tac README.md > gh-pages-dir/README.dm
+# Write artifact to gh-pages
+help_create_artifact
 
 # Update gh-pages
-cd gh-pages-dir
-git fetch
-git merge -s ours origin/master --no-edit
-git add README.dm
-git commit --amend -m "deploy"
-git push -u -f origin gh-pages
-cd ..
+git_subbranch_commit
+git_subbranch_push
 
+# Show results -- gh-pages branch now has parent as master
 help_branch_display
 
 # Edit
-echo "More stuff" >> README.md
-git add README.md
-git commit -m "More stuff"
-
-echo "Even more stuff" >> README.md
-git add README.md
-git commit -m "Even more stuff"
+help_edit_source "More stuff"
+help_edit_source "Even more stuff"
 
 # Deploy to gh-pages again
 tac README.md > gh-pages-dir/README.dm

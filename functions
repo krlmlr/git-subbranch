@@ -16,6 +16,36 @@ git_subbranch_init () {
   cd ..
 }
 
+# Update gh-pages
+git_subbranch_commit () {
+  cd gh-pages-dir
+  git fetch
+  git merge -s ours origin/master --no-edit
+  git add README.dm
+  git commit --amend -m "deploy"
+  cd ..
+}
+
+# Push gh-pages branch to main clone
+git_subbranch_push () {
+  cd gh-pages-dir
+  git push -u -f origin gh-pages
+  cd ..
+}
+
+
+# Edit source
+help_edit_source () {
+  echo "$1" >> README.md
+  git add README.md
+  git commit -m "$1"
+}
+
+# Write contents to gh-pages
+help_create_artifact () {
+  tac README.md > gh-pages-dir/README.dm
+}
+
 # Display branches
 help_branch_display () {
   git branch -vv
