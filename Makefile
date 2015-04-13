@@ -12,6 +12,7 @@ git_subbranch_ignore git_subbranch_init git_subbranch_commit git_subbranch_push:
 
 create_artifact:
 	( echo "---"; echo "layout: index"; echo "---"; echo; grep -B 1000 -A 1 "## Demonstration" README.md; echo '```'; make; echo '```'; grep -A 1000 -B 2 "## Comparison" README.md ) > gh-pages-dir/index.md
+	echo "markdown: redcarpet" > gh-pages-dir/_config.yml
 
 prepare_deploy: create_artifact git_subbranch_commit git_subbranch_push
 
