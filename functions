@@ -17,11 +17,17 @@ git_subbranch_init () {
   cd ..
 }
 
-# Update gh-pages
-git_subbranch_commit () {
+# Link master with gh-pages
+git_subbranch_link () {
   cd gh-pages-dir
   git fetch
   git merge -s ours origin/master --no-edit
+  cd ..
+}
+
+# Update gh-pages
+git_subbranch_commit () {
+  cd gh-pages-dir
   git add -A .
   git commit -m "deploy"
   cd ..

@@ -27,7 +27,10 @@ help_branch_display
 help_create_artifact
 
 # Update gh-pages
+git_subbranch_link
 git_subbranch_commit
+
+# Push back to main checkout
 git_subbranch_push
 
 # Show results -- gh-pages branch now has parent as master
@@ -41,6 +44,7 @@ help_edit_source "Even more stuff"
 help_create_artifact
 
 # Update gh-pages
+git_subbranch_link
 git_subbranch_commit
 
 # Oh, forgot!
@@ -50,6 +54,7 @@ help_edit_source "Oops, forgot"
 help_create_artifact
 
 # Update gh-pages
+git_subbranch_link
 git_subbranch_commit
 
 # Ready? Go!

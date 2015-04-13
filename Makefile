@@ -21,7 +21,7 @@ create_artifact:
 	mkdir -p gh-pages-dir/_layouts
 	cp index.html gh-pages-dir/_layouts
 
-prepare_deploy: create_artifact git_subbranch_commit git_subbranch_push
+prepare_deploy: git_subbranch_link create_artifact git_subbranch_commit git_subbranch_push
 
 push_deploy: prepare_deploy
 	git push
