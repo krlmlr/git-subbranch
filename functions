@@ -10,6 +10,7 @@ git_subbranch_init () {
   git clone . gh-pages-dir
   cd gh-pages-dir
   git checkout --orphan gh-pages
+  git reset --hard
   git commit --allow-empty -m "initial (pages)"
   git branch -d master
   git push -u origin gh-pages
