@@ -37,18 +37,25 @@ help_branch_display
 help_edit_source "More stuff"
 help_edit_source "Even more stuff"
 
-# Deploy to gh-pages again
-tac README.md > gh-pages-dir/README.dm
+# Write artifact to gh-pages again
+help_create_artifact
 
 # Update gh-pages
-cd gh-pages-dir
-git fetch
-git merge -s ours origin/master --no-edit
-git add README.dm
-git commit --amend -m "deploy"
-git push -u -f origin gh-pages
-cd ..
+git_subbranch_commit
 
+# Oh, forgot!
+help_edit_source "Oops, forgot"
+
+# Write artifact to gh-pages again
+help_create_artifact
+
+# Update gh-pages
+git_subbranch_commit
+
+# Ready? Go!
+git_subbranch_push
+
+# Still everything nice and in order
 help_branch_display
 
 # Display contents
