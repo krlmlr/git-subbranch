@@ -34,7 +34,7 @@ cd ..
 
 # Display branches
 git branch -vv
-git log --graph
+git log --graph --oneline --all
 
 # Deploy something to gh-pages
 tac README.md > gh-pages-dir/README.dm
@@ -50,4 +50,4 @@ cd ..
 
 # Display branches again
 git branch -vv
-git log --graph
+git log --graph --oneline --all
