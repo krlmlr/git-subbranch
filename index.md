@@ -37,69 +37,69 @@ cd /tmp/git-subbranch && make test
 make[2]: Entering directory '/tmp/git-subbranch'
 ./test.sh
 Initialized empty Git repository in /tmp/git-subbranch/test/.git/
-[master (root-commit) 6b04095] initial
-[master 87ee35a] initial README.md
+[master (root-commit) b15eca6] initial
+[master a7aac67] initial README.md
  1 file changed, 1 insertion(+)
  create mode 100644 README.md
-[master a33f76e] ignore gh-pages-dir
+[master ddf61f1] ignore gh-pages-dir
  1 file changed, 1 insertion(+)
  create mode 100644 .gitignore
-[gh-pages (root-commit) 3a801d4] initial (pages)
-Deleted branch master (was a33f76e).
+[gh-pages (root-commit) 4ff97d2] initial (pages)
+Deleted branch master (was ddf61f1).
 Branch gh-pages set up to track remote branch gh-pages from origin.
-  gh-pages 3a801d4 initial (pages)
-* master   a33f76e ignore gh-pages-dir
-* 3a801d4 initial (pages)
-* a33f76e ignore gh-pages-dir
-* 87ee35a initial README.md
-* 6b04095 initial
+  gh-pages 4ff97d2 initial (pages)
+* master   ddf61f1 ignore gh-pages-dir
+* 4ff97d2 initial (pages)
+* ddf61f1 ignore gh-pages-dir
+* a7aac67 initial README.md
+* b15eca6 initial
 Merge made by the 'ours' strategy.
-[gh-pages c48e7d3] deploy
+[gh-pages 87132ee] deploy
  1 file changed, 1 insertion(+)
  create mode 100644 README.dm
 Branch gh-pages set up to track remote branch gh-pages from origin.
-  gh-pages c48e7d3 deploy
-* master   a33f76e ignore gh-pages-dir
-* c48e7d3 deploy
-*   bc8409a Merge remote-tracking branch 'origin/master' into gh-pages
+  gh-pages 87132ee deploy
+* master   ddf61f1 ignore gh-pages-dir
+* 87132ee deploy
+*   3708b2b Merge remote-tracking branch 'origin/master' into gh-pages
 |\  
-| * a33f76e ignore gh-pages-dir
-| * 87ee35a initial README.md
-| * 6b04095 initial
-* 3a801d4 initial (pages)
-[master e1bd6f7] More stuff
+| * ddf61f1 ignore gh-pages-dir
+| * a7aac67 initial README.md
+| * b15eca6 initial
+* 4ff97d2 initial (pages)
+[master 0387705] More stuff
  1 file changed, 1 insertion(+)
-[master 590ec15] Even more stuff
+[master 3d7626b] Even more stuff
  1 file changed, 1 insertion(+)
 Merge made by the 'ours' strategy.
-[gh-pages 4e4693a] deploy
+[gh-pages c13de65] deploy
  1 file changed, 2 insertions(+)
-[master f46730f] Oops, forgot
+[master 3158523] Oops, forgot
  1 file changed, 1 insertion(+)
 Merge made by the 'ours' strategy.
-[gh-pages 8459676] deploy
+[gh-pages d4028b5] deploy
  1 file changed, 1 insertion(+)
 Branch gh-pages set up to track remote branch gh-pages from origin.
-  gh-pages 8459676 deploy
-* master   f46730f Oops, forgot
-* 8459676 deploy
-*   fa5d6f7 Merge remote-tracking branch 'origin/master' into gh-pages
+  gh-pages d4028b5 deploy
+* master   3158523 Oops, forgot
+* d4028b5 deploy
+*   9d17ee9 Merge remote-tracking branch 'origin/master' into gh-pages
 |\  
-| * f46730f Oops, forgot
-* | 4e4693a deploy
-* |   2cb0e59 Merge remote-tracking branch 'origin/master' into gh-pages
+| * 3158523 Oops, forgot
+* | c13de65 deploy
+* |   d8a6ccf Merge remote-tracking branch 'origin/master' into gh-pages
 |\ \  
 | |/  
-| * 590ec15 Even more stuff
-| * e1bd6f7 More stuff
-* | c48e7d3 deploy
-* |   bc8409a Merge remote-tracking branch 'origin/master' into gh-pages
+| * 3d7626b Even more stuff
+| * 0387705 More stuff
+* | 87132ee deploy
+* |   3708b2b Merge remote-tracking branch 'origin/master' into gh-pages
 |\ \  
 | |/  
-| * a33f76e ignore gh-pages-dir
-| * 87ee35a initial README.md
-| * 6b04095 initial
-* 3a801d4 initial (pages)
+| * ddf61f1 ignore gh-pages-dir
+| * a7aac67 initial README.md
+| * b15eca6 initial
+* 4ff97d2 initial (pages)
 gh-pages-dir
 README.md
 README.dm
