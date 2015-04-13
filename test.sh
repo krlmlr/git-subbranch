@@ -3,12 +3,13 @@
 set -e
 set -x
 
+rm -rf test
 mkdir test
 cd test
 
 # Init repo
 git init .
-git commit --allow-empty "initial"
+git commit --allow-empty -m "initial"
 
 # Add contents
 echo "# README" > README.md
@@ -26,7 +27,7 @@ git commit -m "ignore gh-pages-dir"
 git clone . gh-pages-dir
 cd gh-pages-dir
 git branch --orphan gh-pages
-git commit --allow-empty "initial (pages)"
+git commit --allow-empty -m "initial (pages)"
 git branch -d master
 git push -u origin gh-pages
 cd ..
