@@ -67,6 +67,7 @@ In day-to-day use, the usual sequence of commands will be `link` -> `commit` -> 
 ### To Git plumbing commands
 
 - Uses high-level Git operations only
+- No tight coupling between `gh-pages` branch and main branch
 
 
 ## Summary
