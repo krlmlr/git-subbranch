@@ -9,13 +9,15 @@ The `gh-pages` branch in GitHub is special -- its contents are interpreted as a 
 1. Switching between branches: One checkout, current branch is chosen via `git checkout`.
 2. Side by side: Two checkouts, but with different checked-out branches. (@chrisjacob [discusses](https://gist.github.com/chrisjacob/833223) a setup using a "grand-parent" directory.)
 3. Contents of the `gh-pages` branch are contained redundantly in a subdirectory. (Uses `git subtree`, described [here](https://gist.github.com/cobyism/4730490), [here](http://gsferreira.com/archive/2014/06/update-github-pages-using-a-project-subfolder/), [here](http://lukecod.es/2014/08/15/deploy-a-static-subdirectory-to-github-pages/), [here](http://happygiraffe.net/blog/2009/07/04/publishing-a-subdirectory-to-github-pages/), and [my favorite approach until now](https://github.com/johnmyleswhite/ProjectTemplate/blob/9374ccc80066f48c925a8e67f159b6602da7c3e8/Makefile#L9)).
+4. Create Git tree and commit objects [manually](http://stackoverflow.com/a/26120283/946850) via plumbing.
 
 None of them are really satisfactory. Perhaps this can be done better.
 
 
 ## Proposition
 
-- Clone the `gh-pages` branch into a subdirectory, say, `gh-pages-dir`
+- Clone the `gh-pages` branch **of the working copy** into a subdirectory, say, `gh-pages-dir`.
+    - This is a two-stage setup, the checkout of `gh-pages` has its `origin` pointing to the working copy. Similar to submodules, but simpler.
 - Ignore this subdirectory via `.gitignore`
 - Initial state of the `gh-pages` branch is an orphaned branch, completely unrelated to all other branches
 - For deployment, first a merge from `master` is performed in order to connect the histories.  (This step is optional but could be desirable.)
@@ -60,6 +62,11 @@ In day-to-day use, the usual sequence of commands will be `link` -> `commit` -> 
 
 - Separation of concern
 - No waste of space
+
+
+### To Git plumbing commands
+
+- Uses high-level Git operations only
 
 
 ## Summary
